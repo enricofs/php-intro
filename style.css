@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: black;
+	color: white;
+
+	font-size: 62.5%;
+	font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2.4rem;
+	margin-bottom: 3rem;
+
+	color: orangered;
+}
+
+form {
+	width: 30rem;
+}
+
+p {
+	font-size: 1.5rem;
+	margin-bottom: 0.7rem;
+
+	max-width: 90%;
+}
+
+input {
+	display: block;
+
+	width: 100%;
+	border-radius: 20px;
+	border-style: none;
+
+	margin-top: 1rem;
+	padding: 0.8rem;
+
+	font-family: 'Poppins', sans-serif;
+}
+
+.button {
+	background: orangered;
+	margin: 0 auto;
+	margin-top: 2.5rem;
+
+	width: calc(100% - 30%);
+}
+
+.button:hover {
+	cursor: pointer;
+	background: orange;
+}
+
+.erro {
+	font-size: 1.1rem;
+	color: orange;
+}
+
+.sucesso {
+	font-size: 1.1rem;
+	color: limegreen;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url(https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+main .wave {
+	position: absolute;
+	width: 100%;
+	height: 143px;
+	bottom: 0;
+	left: 0;
+	background: url(wave.png);
+	animation: animate 10s linear infinite;
+}
+
+main .wave:before {
+	content: '';
+	width: 100%;
+	height: 143px;
+	background: url(wave.png);
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.4;
+	animation: animate-reverse 10s linear infinite;
+}
+
+main .wave:after {
+	content: '';
+	width: 100%;
+	height: 143px;
+	background: url(wave.png);
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.4;
+	animation-delay: -5s;
+	animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+	0% 
+	{
+		background-position: 0;
+	}
+	100%
+	{
+		background-position: 1360px;
+	}
+}
+
+@keyframes animate-reverse {
+	0% 
+	{
+		background-position: 1360px;
+	}
+	100%
+	{
+		background-position: 0;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+  form {
+	width: 18rem;
+  }
+
+  .button {
+  	margin-bottom: 10rem;
+  }
+
+  .erro, .sucesso {
+  	font-size: 1rem;
+  }
+}
